@@ -1,0 +1,7 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activities_margin">12dp</dimen>
+    <dimen name="button_width">140dp</dimen>
+    <dimen name="name_input_between">5dp</dimen>
+    <dimen name="name_text_view">70dp</dimen>
+</resources>

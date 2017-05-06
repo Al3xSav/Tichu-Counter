@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Tichu Counter</string>
+    <string name="app_rules">Game Rules</string>
+
+    <string name="start">Start Counter</string>
+    <string name="rules">Rules</string>
+
+    <string name="version">Tichu Nanjing (for 4 players)</string>
+
+    <string name="cards_1">
+        There are four suits (Jack, Sword, Pagoda, Star) of 13 cards each
+        corresponding in value to Bridge cards ie. The highest card in each suit being the Ace and
+        the lowest being the "2". The "10's" lie between the "9" and the "Jack"
+    </string>
+
+    <string name="cards_2">
+        There are four special cards : Mah Jong, Dog, Phoenix and Dragon
+        (see illustration in German rules) - which brings the total number of cards to 56.
+    </string>
+
+    <string name="cards_3">
+        The players play in two teams each of two players. Each player sits opposite his partner
+        and they work together in acquiring points.
+    </string>
+</resources>
