@@ -5,4 +5,6 @@
     <color name="colorAccent">#FF4081</color>
     <color name="colorSubmit">#FFFFFF</color>
     <color name="txtColor">#000000</color>
+    <color name="color_black">#000000</color>
+    <color name="color_gray">#616161</color>
 </resources>

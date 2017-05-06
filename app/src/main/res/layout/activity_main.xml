@@ -1,25 +1,213 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
 
-<android.support.constraint.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.example.android.tichuscorekeeper.MainActivity">
-
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:stretchColumns="1"
+        tools:context="com.example.android.tichuscorekeeper.MainActivity">
 
-</android.support.constraint.ConstraintLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
+            android:alpha=".5" />
+
+
+        <LinearLayout
+            android:id="@+id/main_form"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="12dp"
+            android:orientation="horizontal">
+
+            <!-- Team A linear Layout -->
+            <LinearLayout
+                style="@style/teams"
+                android:layout_marginRight="12dp">
+
+                <TextView
+                    android:id="@+id/nameTeamA"
+                    style="@style/teamNames"
+                    android:hint="Team A" />
+
+                <TextView
+                    android:id="@+id/team_a_score"
+                    style="@style/score"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/editTextA"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Add points"
+                    android:inputType="numberDecimal" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/addTichuTeamA"
+                        style="@style/buttons"
+                        android:onClick="extraTeamA"
+                        android:tag="1"
+                        android:text="+100" />
+
+                    <Button
+                        android:id="@+id/reduceTichuTeamA"
+                        style="@style/buttons"
+                        android:onClick="extraTeamA"
+                        android:tag="2"
+                        android:text="-100" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/addGrandTeamA"
+                        style="@style/buttons"
+                        android:onClick="extraTeamA"
+                        android:tag="3"
+                        android:text="+200" />
+
+                    <Button
+                        android:id="@+id/reduceGrandTeamA"
+                        style="@style/buttons"
+                        android:onClick="extraTeamA"
+                        android:tag="4"
+                        android:text="-200" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                <Button
+                    style="@style/buttons"
+                    android:onClick="addPointsTeamA"
+                    android:tag="5"
+                    android:text="Add" />
+
+                    <Button
+                        style="@style/buttons"
+                        android:onClick="reducePointsTeamA"
+                        android:tag="6"
+                        android:text="Reduce" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <View
+                android:layout_width="@dimen/lineview_width"
+                android:layout_height="match_parent"
+                android:background="#800000" />
+
+            <!-- Team B Linear Layout -->
+            <LinearLayout
+                style="@style/teams"
+                android:layout_marginLeft="12dp">
+
+                <TextView
+                    android:id="@+id/nameTeamB"
+                    style="@style/teamNames"
+                    android:hint="Team B" />
+
+                <TextView
+                    android:id="@+id/team_b_score"
+                    style="@style/score"
+                    android:text="0" />
+
+                <EditText
+                    android:id="@+id/editTextB"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:hint="Add points"
+                    android:inputType="numberDecimal"
+                    android:maxLines="1"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/addTichuTeamB"
+                        style="@style/buttons"
+                        android:onClick="extraTeamB"
+                        android:tag="7"
+                        android:text="+100" />
+
+                    <Button
+                        android:id="@+id/reduceTichuTeamB"
+                        style="@style/buttons"
+                        android:onClick="extraTeamB"
+                        android:tag="8"
+                        android:text="-100" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/addGrandTeamB"
+                        style="@style/buttons"
+                        android:onClick="extraTeamB"
+                        android:tag="9"
+                        android:text="+200" />
+
+                    <Button
+                        android:id="@+id/reduceGrandTeamB"
+                        style="@style/buttons"
+                        android:onClick="extraTeamB"
+                        android:tag="10"
+                        android:text="-200" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        style="@style/buttons"
+                        android:onClick="addPointsTeamB"
+                        android:tag="11"
+                        android:text="Add" />
+
+                    <Button
+                        style="@style/buttons"
+                        android:onClick="reducePointsTeamB"
+                        android:tag="12"
+                        android:text="Reduce" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <Button
+            style="@style/resetButton"
+            android:onClick="resetScores"
+            android:tag="13"
+            android:text="Reset" />
+
+    </RelativeLayout>
 </ScrollView>

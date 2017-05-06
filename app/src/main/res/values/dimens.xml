@@ -4,4 +4,6 @@
     <dimen name="button_width">140dp</dimen>
     <dimen name="name_input_between">5dp</dimen>
     <dimen name="name_text_view">70dp</dimen>
+    <dimen name="textview_width">0dp</dimen>
+    <dimen name="lineview_width">1dp</dimen>
 </resources>

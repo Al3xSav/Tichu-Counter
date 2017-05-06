@@ -16,4 +16,54 @@
         <item name="android:layout_gravity">center</item>
     </style>
 
+    <!-- Reset button styling-->
+    <style name="resetButton">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:textColor">@color/colorSubmit</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <!-- Linear Layout of each Team-->
+    <style name="teams">
+        <item name="android:layout_width">@dimen/textview_width</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <!-- Style of Team A and Team B-->
+    <style name="teamNames">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingBottom">18dp</item>
+        <item name="android:textColor">@color/color_gray</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">25sp</item>
+    </style>
+
+    <!-- Style of Goal for each Team-->
+    <style name="score">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">56sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- Buttons styling, except Reset Button-->
+    <style name="buttons">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">18dp</item>
+        <item name="android:textColor">@color/colorSubmit</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
 </resources>
