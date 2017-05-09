@@ -1,26 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical">
+    android:fillViewport="true">
 
-    <ImageView
-        android:contentDescription="@string/logoDescription"
-        android:id="@+id/imageView"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:src="@drawable/tichu_logo" />
+        android:layout_height="match_parent"
+        android:stretchColumns="1"
+        android:background="@color/background"
+        android:orientation="vertical">
 
-    <Button
-        android:id="@+id/start"
-        style="@style/custom_button"
-        android:text="@string/start" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:contentDescription="@string/logoDescription"
+            android:src="@drawable/tichu_logo" />
 
-    <Button
-        android:id="@+id/rules"
-        style="@style/custom_button"
-        android:text="@string/rules" />
+        <Button
+            android:id="@+id/start"
+            style="@style/custom_button"
+            android:text="@string/start" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/rules"
+            style="@style/custom_button"
+            android:text="@string/rules" />
+
+    </LinearLayout>
+
+</ScrollView>
