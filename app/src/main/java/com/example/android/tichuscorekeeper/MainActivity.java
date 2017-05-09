@@ -3,7 +3,6 @@ package com.example.android.tichuscorekeeper;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -15,10 +14,12 @@ public class MainActivity extends AppCompatActivity {
     int scoreTeamA = 0;
     int scoreTeamB = 0;
 
+    int tichu = 100;
+    int grandTichu = 200;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
     }
 
@@ -63,23 +64,17 @@ public class MainActivity extends AppCompatActivity {
      */
     public void addPointsTeamA(View v) {
         final EditText myInput = (EditText) findViewById(R.id.editTextA);
-        if(myInput.getText().length() > 0 && Integer.parseInt(myInput.getText().toString()) <= 200 ) {
-            scoreTeamA = scoreTeamA + Integer.parseInt(myInput.getText().toString());
-            displayScoreTeamA(scoreTeamA);
-            myInput.getText().clear();
-        }
-    }
+        String myInputSymbol = myInput.getText().toString();
 
+        if (myInput.getText().length() > 0 && Integer.parseInt(myInput.getText().toString()) <= 200) {
+            if (myInputSymbol.substring(0, 1) == "-") {
+                scoreTeamA = scoreTeamA - Integer.parseInt(myInput.getText().toString());
+                displayScoreTeamA(scoreTeamA);
+            } else {
+                scoreTeamA = scoreTeamA + Integer.parseInt(myInput.getText().toString());
+                displayScoreTeamA(scoreTeamA);
 
-
-    /**
-     * Decrease the score for Team A.
-     */
-    public void reducePointsTeamA(View v) {
-        final EditText myInput = (EditText) findViewById(R.id.editTextA);
-        if(myInput.getText().length() > 0 && Integer.parseInt(myInput.getText().toString()) <= 200 ) {
-            scoreTeamA = scoreTeamA - Integer.parseInt(myInput.getText().toString());
-            displayScoreTeamA(scoreTeamA);
+            }
             myInput.getText().clear();
         }
     }
@@ -90,13 +85,13 @@ public class MainActivity extends AppCompatActivity {
     public void extraTeamB(View v){
 
         if (v.getId()== R.id.addTichuTeamB) {
-            scoreTeamB = scoreTeamB + 100;
+            scoreTeamB = scoreTeamB + tichu;
         } else if(v.getId() == R.id.reduceTichuTeamB) {
-            scoreTeamB = scoreTeamB - 100;
+            scoreTeamB = scoreTeamB - tichu;
         } else if(v.getId() == R.id.addGrandTeamB) {
-            scoreTeamB = scoreTeamB + 200;
+            scoreTeamB = scoreTeamB + grandTichu;
         } else if(v.getId() == R.id.reduceGrandTeamB) {
-            scoreTeamB = scoreTeamB - 200;
+            scoreTeamB = scoreTeamB - grandTichu;
         }
         displayScoreTeamB(scoreTeamB);
     }
@@ -107,37 +102,31 @@ public class MainActivity extends AppCompatActivity {
     public void extraTeamA(View v){
 
         if (v.getId()== R.id.addTichuTeamA) {
-            scoreTeamA = scoreTeamA + 100;
+            scoreTeamA = scoreTeamA + tichu;
         } else if(v.getId() == R.id.reduceTichuTeamA) {
-            scoreTeamA = scoreTeamA - 100;
+            scoreTeamA = scoreTeamA - tichu;
         } else if(v.getId() == R.id.addGrandTeamA) {
-            scoreTeamA = scoreTeamA + 200;
+            scoreTeamA = scoreTeamA + grandTichu;
         } else if(v.getId() == R.id.reduceGrandTeamA) {
-            scoreTeamA = scoreTeamA - 200;
+            scoreTeamA = scoreTeamA - grandTichu;
         }
         displayScoreTeamA(scoreTeamA);
     }
 
     /**
-     * Increase the score for Team B.
+     * Increase or Decrease the score for Team B.
      */
     public void addPointsTeamB(View v) {
         final EditText myInput = (EditText) findViewById(R.id.editTextB);
+        String myInputSymbol = myInput.getText().toString();
         if(myInput.getText().length() > 0 && Integer.parseInt(myInput.getText().toString()) <= 200 ) {
-            scoreTeamB = scoreTeamB + Integer.parseInt(myInput.getText().toString());
-            displayScoreTeamB(scoreTeamB);
-            myInput.getText().clear();
-        }
-    }
-
-    /**
-     * Decrease the score for Team B.
-     */
-    public void reducePointsTeamB(View v) {
-        final EditText myInput = (EditText) findViewById(R.id.editTextB);
-        if(myInput.getText().length() > 0 && Integer.parseInt(myInput.getText().toString()) <= 200 ) {
-            scoreTeamB = scoreTeamB - Integer.parseInt(myInput.getText().toString());
-            displayScoreTeamA(scoreTeamB);
+            if(myInputSymbol.substring(0,1) == "-") {
+                scoreTeamB = scoreTeamB - Integer.parseInt(myInput.getText().toString());
+                displayScoreTeamB(scoreTeamB);
+            } else {
+                scoreTeamB = scoreTeamB + Integer.parseInt(myInput.getText().toString());
+                displayScoreTeamB(scoreTeamB);
+            }
             myInput.getText().clear();
         }
     }
