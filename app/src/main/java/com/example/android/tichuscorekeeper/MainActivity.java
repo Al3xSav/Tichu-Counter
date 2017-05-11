@@ -6,45 +6,53 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+
 public class MainActivity extends AppCompatActivity {
 
     private static final String STATE_SCORETEAMA = "stateOfScoreTeamA";
     private static final String STATE_SCORETEAMB = "stateOfScoreTeamB";
 
-    int scoreTeamA = 0;
-    int scoreTeamB = 0;
+    private int scoreTeamA = 0;
+    private int scoreTeamB = 0;
 
-    int tichu = 100;
-    int grandTichu = 200;
+    private int tichu = 100;
+    private int grandTichu = 200;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
+
+
     }
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
-        savedInstanceState.putInt(STATE_SCORETEAMA, scoreTeamA);
-        savedInstanceState.putInt(STATE_SCORETEAMB, scoreTeamB);
+        if(savedInstanceState != null) {
+            savedInstanceState.putInt(STATE_SCORETEAMA, scoreTeamA);
+            savedInstanceState.putInt(STATE_SCORETEAMB, scoreTeamB);
 
-        super.onSaveInstanceState(savedInstanceState);
+            super.onSaveInstanceState(savedInstanceState);
+        }
     }
 
     public void onRestoreInstanceState(Bundle savedInstanceState) {
-        super.onRestoreInstanceState(savedInstanceState);
+        if(savedInstanceState != null) {
+            super.onRestoreInstanceState(savedInstanceState);
 
         /* Scores */
-        scoreTeamA = savedInstanceState.getInt(STATE_SCORETEAMA);
-        scoreTeamB = savedInstanceState.getInt(STATE_SCORETEAMB);
+            scoreTeamA = savedInstanceState.getInt(STATE_SCORETEAMA);
+            scoreTeamB = savedInstanceState.getInt(STATE_SCORETEAMB);
 
         /* Display values after restoring */
-        displayScoreTeamA(scoreTeamA);
-        displayScoreTeamB(scoreTeamB);
+            displayScoreTeamA(scoreTeamA);
+            displayScoreTeamB(scoreTeamB);
+        }
     }
 
     /**
-     * Displays the given fouls for Team A.
+     * Displays the given score for Team A.
      */
     public void displayScoreTeamA(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_a_score);
@@ -52,12 +60,18 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Displays the given fouls for Team A.
+     * Displays the given score for Team B.
      */
     public void displayScoreTeamB(int score) {
         TextView scoreView = (TextView) findViewById(R.id.team_b_score);
         scoreView.setText(String.valueOf(score));
     }
+
+    /*How can I display in one method ??
+    //TODO
+    public void displayScore(View v, int goal) {
+        v.setText(String.valueOf(goal));
+    }*/
 
     /**
      * Increase the score for Team A.
